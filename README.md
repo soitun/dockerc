@@ -16,7 +16,7 @@ $ dockerc --image docker://oven/bun --output bun
 # Image in local docker daemon storage
 $ dockerc --image docker-daemon:mysherlock-image:latest --output sherlock_bin
 # Specify target instruction set architecture
-$ docker --image docker://hello-world --arch arm64 --output hello
+$ dockerc --image docker://hello-world --arch arm64 --output hello
 ```
 
 The output binary can then be called as you would with usual binaries. You can
