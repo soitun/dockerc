@@ -35,7 +35,13 @@ $ git submodule init
 $ git submodule update
 ```
 
-This will ensure that you download and update all relevant submodule contents. Once the submodules are properly initialized, you can proceed with the compilation instructions below.
+This will ensure that you download and update all relevant submodule contents.
+
+dockerc uses a patched version of the zig compiler than can be found on the
+[nils-dockerc-version branch][5] of the NilsIrl/zig repository. There is an
+[open PR][6] for the patch to be included in upstream zig.
+
+To compile dockerc use the following commands:
 
 ```
 $ zig build -Doptimize=ReleaseSafe -Dtarget=x86_64-linux-musl
@@ -59,3 +65,5 @@ $ zig build -Doptimize=ReleaseSafe -Dtarget=aarch64-linux-musl
 [2]: https://docs.docker.com/reference/cli/docker/container/run/#env
 [3]: https://docs.docker.com/reference/cli/docker/container/run/#volume
 [4]: https://www.reddit.com/r/github/comments/1at9br4/i_am_new_to_github_and_i_have_lots_to_say/
+[5]: https://github.com/NilsIrl/zig/tree/nils-dockerc-version
+[6]: https://github.com/ziglang/zig/pull/21092
